@@ -10,8 +10,10 @@ install: build
 	mkdir -p $(PREFIX)/bin
 	mkdir -p $(LIB_INSTALL_PATH)
 	mkdir -p $(LIB_FLAT_DIR)
-	cp -f $(BUILD_PATH) $(INSTALL_PATH)
-	cp -f danger-kotlin-library/build/libs/danger-kotlin.jar $(LIB_INSTALL_PATH)/danger-kotlin.jar
+	ls -l $(BUILD_PATH)
+	cp -fv $(BUILD_PATH) $(INSTALL_PATH)
+	ls -l danger-kotlin-library/build/libs/danger-kotlin.jar
+	cp -fv danger-kotlin-library/build/libs/danger-kotlin.jar $(LIB_INSTALL_PATH)/danger-kotlin.jar
 
 build:
 	./gradlew build -p danger-plugin-installer
