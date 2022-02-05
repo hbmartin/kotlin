@@ -14,8 +14,10 @@ install: build
 	cp -fv $(BUILD_PATH) $(INSTALL_PATH)
 	ls -l danger-kotlin-library/build/libs/danger-kotlin.jar
 	ls -l $(LIB_INSTALL_PATH)
-	./danger-kotlin/build/bin/runner/releaseExecutable/danger-kotlin.kexe --help
+	./danger-kotlin/build/bin/runner/releaseExecutable/danger-kotlin.kexe ci
 	ln danger-kotlin-library/build/libs/danger-kotlin.jar $(LIB_INSTALL_PATH)/danger-kotlin.jar
+	./gradlew --status
+	./gradlew --stop
 	echo "finished installing danger-kotlin"
 
 build:
