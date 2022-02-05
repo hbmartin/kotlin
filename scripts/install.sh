@@ -30,7 +30,7 @@ if [[ -n "$sudo" && "$OSTYPE" != "darwin"* ]]; then
 	sudo chmod -R a+rwx /usr/local/
 fi
 
-git clone https://github.com/hbmartin/kotlin.git --branch $VERSION --depth 1 _danger-kotlin
+git clone https://github.com/hbmartin/kotlin.git --depth 1 _danger-kotlin
 cd _danger-kotlin && make install
 cd ..
 rm -rf _danger-kotlin
